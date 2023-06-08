@@ -16,6 +16,7 @@
 import os
 import sys
 from argparse import ArgumentParser
+import new as nw
 
 from flask import Flask, request, abort
 from linebot import (
@@ -65,9 +66,10 @@ def callback():
         if not isinstance(event.message, TextMessage):
             continue
 
+        reslut = nw.read( event.message.text)
         line_bot_api.reply_message(
             event.reply_token,
-            TextSendMessage(text=event.message.text)
+            TextSendMessage(text= reslut )
         )
 
     return 'OK'
