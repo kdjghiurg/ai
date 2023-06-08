@@ -2,11 +2,11 @@ import requests
 from bs4 import BeautifulSoup
 
 def read( word ):
-    url = f'https://dict.mini.moe.edu.tw/SearchIndex/word_detail?wordID=D0000012&breadcrumbs={word}#word-detail-info'
+    url = f'https://crptransfer.moe.gov.tw/index.jsp?SN={word}#result'
 
     html = requests.get( url )
     bs = BeautifulSoup(html.text,'lxml')
-    data = bs.find('div', id='word-detail-info')
+    data = bs.find('table', id='result')
     try:
         row = data.find_all('tr')[2]
         chinese = row.find('cr').text
