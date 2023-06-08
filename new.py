@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def read( word ):
-    url = f'https://crptransfer.moe.gov.tw/index.jsp?SN={word}#result'
+    url = f'https://crptransfer.moe.gov.tw/index.jsp?SN={word}#資料類型'
 
     html = requests.get( url )
     bs = BeautifulSoup(html.text,'lxml')
