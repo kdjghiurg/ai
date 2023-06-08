@@ -6,7 +6,7 @@ def read( word ):
 
     html = requests.get( url )
     bs = BeautifulSoup(html.text,'lxml')
-    data = bs.find('table', id='result')
+    data = bs.find('', axis="資料類型")
     try:
         row = data.find_all('tr')[2]
         chinese = row.find('cr').text
