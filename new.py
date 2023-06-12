@@ -10,7 +10,7 @@ def read( word ):
     try:
         row = data[1]
         chinese = row.text
-        two = data[3]
+        two = data[7]
         phones = two
         phone = [e.text for e in phones]
         s = " ".join( phone )
