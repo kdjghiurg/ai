@@ -8,7 +8,7 @@ def read( word ):
     bs = BeautifulSoup(html.text,'lxml')
     data = bs.find_all('td')
     try:
-        row = data.[1]
+        row = data.[2]
         chinese = row.text
         two = data[4]
         phones = two
