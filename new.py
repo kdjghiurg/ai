@@ -6,11 +6,11 @@ def read( word ):
 
     html = requests.get( url )
     bs = BeautifulSoup(html.text,'lxml')
-    data = bs.find_all('td')
+    data = bs.find_all('tr')
     try:
-        row = data.[2]
+        row = data.[1]
         chinese = row.text
-        two = data[4]
+        two = data[3]
         phones = two
         phone = [e.text for e in phones]
         s = " ".join( phone )
